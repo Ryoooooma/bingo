@@ -34,7 +34,7 @@ $s = "";
 for ($j=0; $j<5; $j++) {
 	$s .= "<tr>";
 	for ($k=0; $k<5; $k++){
-		$s .= sprintf("<td>%s</td>", $bingo[$k][$j]);
+		$s .= ($j==2 && $k==2) ? "<td></td>" : sprintf("<td>%s</td>", $bingo[$k][$j]);
 	}
 	$s .= "</tr>";
 }
@@ -49,7 +49,7 @@ for ($j=0; $j<5; $j++) {
 		<title>BINGOシート</title>
 	</head>
 	<style>
-		th, th {
+		td, th {
 			width: 50px;
 			border: 1px solid #ccc;
 			text-align: center;
