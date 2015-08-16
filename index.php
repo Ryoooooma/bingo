@@ -27,8 +27,17 @@ for ($i=0; $i<5; $i++) {
 	$bingo[$i] = array_slice($numbers, 0, 5);
 }
 
-var_dump($bingo);
+// var_dump($bingo);
 
+$s = "";
+
+for ($j=0; $j<5; $j++) {
+	$s .= "<tr>";
+	for ($k=0; $k<5; $k++){
+		$s .= sprintf("<td>%s</td>", $bingo[$k][$j]);
+	}
+	$s .= "</tr>";
+}
 
 
 ?>
@@ -51,6 +60,7 @@ var_dump($bingo);
 	<h1>BINGOシート</h1>
 	<table>
 		<tr><th>B</th><th>I</th><th>N</th><th>G</th><th>O</th></tr>
+		<?php echo $s; ?>
 	</table>
 	</body>
 </html>
